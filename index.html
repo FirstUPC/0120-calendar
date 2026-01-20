@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Redirecting…</title>
+
+  <!-- Instant-ish redirect (some browsers ignore meta refresh, so we also do JS) -->
+  <meta http-equiv="refresh"
+        content="0; url=webcal://raw.githubusercontent.com/FirstUPC/calendar-20260120/main/2026-annual-guidelines-meeting.ics">
+
+  <script>
+    // Try immediately, then try again after a short delay (covers some iOS/in-app quirks)
+    const target = "webcal://raw.githubusercontent.com/FirstUPC/calendar-20260120/main/2026-annual-guidelines-meeting.ics";
+    window.location.replace(target);
+    setTimeout(() => { window.location.href = target; }, 300);
+  </script>
+</head>
+<body>
+  <p style="font-family:-apple-system,system-ui,Segoe UI,Roboto,Arial,sans-serif">
+    Redirecting to Calendar…<br><br>
+    If nothing happens, tap this:
+    <a href="webcal://raw.githubusercontent.com/FirstUPC/calendar-20260120/main/2026-annual-guidelines-meeting.ics">
+      Subscribe
+    </a>
+    <br><br>
+    Or download:
+    <a href="https://raw.githubusercontent.com/FirstUPC/calendar-20260120/main/2026-annual-guidelines-meeting.ics">
+      Open .ics
+    </a>
+  </p>
+</body>
+</html>
