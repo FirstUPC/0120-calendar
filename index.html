@@ -3,30 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- =========================
+       CHANGE ONLY THIS ONE LINE
+       ========================= -->
+  <!-- Paste your preview image URL here (must be a direct https image URL, not github.com/blob) -->
+  <meta name="x-og-image"
+        content="https://raw.githubusercontent.com/FirstUPC/0120-calendar/6401a1b822f0c87fecc0800e33a836410c5f1c95/previewimg.jpeg" />
+
+  <!-- What iMessage uses for link preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Music Dept Guidelines Meeting" />
+  <meta property="og:description" content="Tue Jan 27, 2026 • 7:00 PM ET • FirstUPCJax (Room TBA)" />
+
+  <!-- IMPORTANT: og:image must be a normal meta tag (we’ll duplicate the value below for crawlers) -->
+  <meta property="og:image"
+        content="https://raw.githubusercontent.com/FirstUPC/0120-calendar/6401a1b822f0c87fecc0800e33a836410c5f1c95/previewimg.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Your GitHub Pages URL for this redirect page -->
+  <meta property="og:url" content="https://firstupc.github.io/calendar-20260120/" />
+
+  <meta name="twitter:card" content="summary_large_image" />
   <title>Redirecting…</title>
 
-  <!-- Instant-ish redirect (some browsers ignore meta refresh, so we also do JS) -->
+  <!-- Calendar subscribe target -->
   <meta http-equiv="refresh"
         content="0; url=webcal://raw.githubusercontent.com/FirstUPC/calendar-20260120/main/2026-annual-guidelines-meeting.ics">
 
   <script>
-    // Try immediately, then try again after a short delay (covers some iOS/in-app quirks)
-    const target = "webcal://raw.githubusercontent.com/FirstUPC/calendar-20260120/main/2026-annual-guidelines-meeting.ics";
-    window.location.replace(target);
-    setTimeout(() => { window.location.href = target; }, 300);
+    const WEBCAL_URL = "webcal://raw.githubusercontent.com/FirstUPC/calendar-20260120/main/2026-annual-guidelines-meeting.ics";
+    const HTTPS_ICS  = "https://raw.githubusercontent.com/FirstUPC/calendar-20260120/main/2026-annual-guidelines-meeting.ics";
+
+    // Attempt immediate redirect
+    window.location.replace(WEBCAL_URL);
+    // Retry shortly (helps with some in-app browsers)
+    setTimeout(() => { window.location.href = WEBCAL_URL; }, 250);
   </script>
 </head>
-<body>
-  <p style="font-family:-apple-system,system-ui,Segoe UI,Roboto,Arial,sans-serif">
-    Redirecting to Calendar…<br><br>
-    If nothing happens, tap this:
+
+<body style="font-family:-apple-system,system-ui,Arial,sans-serif;padding:20px;">
+  <p>Redirecting to Calendar…</p>
+  <p>If nothing happens, tap:</p>
+  <p>
     <a href="webcal://raw.githubusercontent.com/FirstUPC/calendar-20260120/main/2026-annual-guidelines-meeting.ics">
-      Subscribe
+      Subscribe (Apple Calendar)
     </a>
-    <br><br>
-    Or download:
+  </p>
+  <p>Or:</p>
+  <p>
     <a href="https://raw.githubusercontent.com/FirstUPC/calendar-20260120/main/2026-annual-guidelines-meeting.ics">
-      Open .ics
+      Download / Open .ics
     </a>
   </p>
 </body>
